@@ -1,8 +1,9 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
+  首页: /
+  归档: /archives
+  博客: http://blog.csdn.com/xwhnew
+# rss: /
 
 # Content
 excerpt_link: Read More
