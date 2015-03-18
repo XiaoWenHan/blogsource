@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 精于内 | 简于形
 subtitle:
 description:
-author: John Doe
+author: 萧文翰
 language:
 timezone:
 
@@ -62,9 +62,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: pacman
-stylus:
-  compress:true
+theme: landscape
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
