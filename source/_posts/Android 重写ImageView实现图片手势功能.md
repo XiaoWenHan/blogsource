@@ -5,7 +5,10 @@ categories: Android开发
 
 ---
 通过这个XImageView.java类，可实现单点触摸移动，以及双指缩放图片功能。
-使用时，只要在布局文件中引入，并在Java代码中按照原生ImageView设置要显示的图片即可。
+使用时，只要在布局文件中引入，并在Java代码中按照原生ImageView设置要显示的图片即可。  
+
+<!--more-->
+
 代码如下（仅供参考）：
 
     import android.annotation.SuppressLint;  

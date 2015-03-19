@@ -8,6 +8,9 @@ categories: Android开发
 休息了三天后，我又回来了，我们继续讨论Toolbar。  
 如果此前你是跟着连载一步一步走下来的，那么你应该会注意到MainActivity是一直在报警告的。因为其中我们声明了toolbar对象，但是一直没有使用。如果要实现菜单功能的话，就要使用了。  
 结合Toolbar使用菜单还是很容易的。只需在MainActivity中重写onCreateOptionsMenu()和onOptionsItemSelected()就可以了。这种方法已经有着悠久的历史，这里就不再多说了。  
+
+<!--more-->
+
 回忆一下ActionBar，此前的ActionBar在实现菜单时，如果遇到虚拟按键的机器，会在Activity的右上角显示菜单。如果遇到实体按键的机器，则不会，用户需要手动去触摸菜单键才能激活菜单。这其实是不太合理的，作为用户，很有可能不知道应用中还有菜单。因此，在Toolbar中，这个问题得到了很好的修复。效果就是，无论是否存在实体按键，右上角都会显示菜单，而要实现这一效果也是及其容易的，只需要下面的一句话：  
 
     setSupportActionBar(toolbar);  

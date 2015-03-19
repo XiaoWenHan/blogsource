@@ -7,6 +7,9 @@ categories: Android开发
 该文件操作包含了文件/文件夹的创建、复制、剪切和删除操作。
 具体调用方法参见类方法注释：
 
+<!--more-->
+
+
     package com.xwh.afileutil;  
   
 	import java.io.File;  

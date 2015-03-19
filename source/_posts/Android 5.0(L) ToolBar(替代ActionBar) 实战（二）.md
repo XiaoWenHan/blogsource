@@ -6,7 +6,10 @@ categories: Android开发
 ---
 
 上一次我们说到ToolBar的创建，这次我们来讨论一下ToolBar结合ViewPager实现类似微信的左右滑屏多个界面的效果。  
-要实现滑屏，首先我们要到Android开发者官网去下载一个示例代码，它封装了Viewpager和Tab配合切换页卡的方法。当然，我们也可以自己来实现，为了节约时间成本，就直接拿来用了。如果在官网找不到或者无奈被墙，可以到这里下载：http://download.csdn.net/detail、wh1990xiao2005/8105345  
+要实现滑屏，首先我们要到Android开发者官网去下载一个示例代码，它封装了Viewpager和Tab配合切换页卡的方法。当然，我们也可以自己来实现，为了节约时间成本，就直接拿来用了。如果在官网找不到或者无奈被墙，可以到这里下载：  
+<!--more-->
+
+[http://download.csdn.net/detail/wh1990xiao2005/8105345  ](http://download.csdn.net/detail/wh1990xiao2005/8105345  )
 把下载好的工具类复制到项目指定的包内，我是在之前的项目中创建了view专用的包，并将这两个类复制了进去。
 ![](http://i.imgur.com/E4M1Y6k.png)  
 这里要注意，复制进去之后有可能会报错，因为包名不符，只需把package包名修改为自己的类所在包名即可。  

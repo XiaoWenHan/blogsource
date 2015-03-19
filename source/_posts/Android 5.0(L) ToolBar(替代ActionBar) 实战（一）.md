@@ -7,6 +7,9 @@ categories: Android开发
 
 Android 5.0SDK在上周悄然发布了，由于更新了Appcombat V7库，将Google在IO 2014时提到的Material Design的UI界面元素带了进来。从此，开发者可以创建基于Material Design界面设计的APP了。  
 诚然，在更新了新版SDK并引入新的Appcombat库后，发现之前的ActionBar的很多方法已经标记为不建议（Deprecated）的了。经过反复摸索，得知需要用ToolBar来代替古老的ActionBar。  
+
+<!--more-->
+
 那么ToolBar与传统ActionBar相比，有何优越性呢？简单来说：多样、自由。下面来一起看看ToolBar的使用。  
 首先，我们来新建一个项目 
 
