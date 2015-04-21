@@ -40,6 +40,9 @@ categories: Android开发
 	}
 
 这里需要注意的是，**Intent对象的Flag必须包含FLAG\_ACTIVITY\_NEW\_TASK。**  
+最后，在复写的onCreate方法中，指定异常处理的方法：  
+    Thread.setDefaultUncaughtExceptionHandler(crashHandler);  
+其中，crashHandler为CrashHandler的对象。
 到此，我们的程序在发生崩溃的时候就不会出现“很抱歉。。。”的对话框了，取而代之的是自动重启。  
 当然，这只是一个治标不治本的方法，真正的解决之道依然要找到崩溃的位置，然后除掉这个Bug。  
 最后，关于Application，我这里就不多说了，如果诸位不是很了解的话，可以看下这位兄弟的文章，会大有启发：  
