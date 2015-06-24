@@ -4,7 +4,7 @@ email: wh1990xiao2005@hotmail.com
 description: > # this means to ignore newlines until "baseurl:"
   You can find more information about me via "About". Thank you for your visit.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.xwhcoder.com" # the base hostname & protocol for your site
+url: "http://www.xwhcoder.com" # the base hostname & protocol for your site
 twitter_username: wh1990xiao2005
 github_username:  XiaoWenHan
 
