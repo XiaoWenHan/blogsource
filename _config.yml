@@ -1,12 +1,59 @@
-# Site settings
-title: Code the World
-email: wh1990xiao2005@hotmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  You can find more information about me via "About". Thank you for your visit.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.xwhcoder.com" # the base hostname & protocol for your site
-twitter_username: wh1990xiao2005
-github_username:  XiaoWenHan
+title:            简即是美
+description:      今天不止谈代码
+disqus_shortname: xwhcoder
+reading_time:     true
+words_per_minute: 200
+# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+url:
 
-# Build settings
-markdown: kramdown
+# Owner/author information
+owner:
+  name:           萧文翰
+  avatar:         avatar.jpg
+  bio:            聚沙成塔，集腋成裘
+  email:          wh1990xiao2005@hotmail.com
+  github:         wh1990xiao2005@hotmail.com
+
+# Background image to be tiled on all pages
+background: 
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Chongqing
+future:      true
+highlighter: pygments
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

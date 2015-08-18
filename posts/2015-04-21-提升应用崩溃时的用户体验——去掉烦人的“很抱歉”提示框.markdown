@@ -1,0 +1,49 @@
+---
+layout: post
+title: "提升应用崩溃时的用户体验——去掉烦人的“很抱歉”提示框"
+date: 2015-04-21 19:25:25
+categories: Android开发
+
+---
+好久不见了。  
+最近，博主一直在忙着搞建站的事情，也有一段时间没有更新博客了，很抱歉。   
+相信很多在用或者用过Android系统的的手机的朋友都有过这样的经历：自己玩着玩着某个程序，突然屏幕一黑，然后出现一个对话框，提示很抱歉，应用程序已经停止工作。这意味着程序已然崩溃了，用户唯一要做的就是接下来重新运行这个程序，或者去干些别的。我个人推测，前者占大多数。   
+当然，一些比较健壮的程序是一般不会出现这种情况的，但是，作为一名对用户负责的开发者，要时刻为用户着想，这就是我们今天要谈的话题——优化程序崩溃时的用户体验。  
+**我们的目标是：程序发生了异常后，自定义异常处理流程，然后自动重新启动程序。**  
+看上去貌似很复杂，其实很容易。**核心在于对Application这个单例的继承。**  
+首先，在应用中写一个类，继承Application，然后在AndroidManifest.xml中注册，注册的代码可如下例：  
+
+    <application
+        android:name=".environment.BaseApplication"
+        android:enabled="true"
+        android:icon="@drawable/icon64"
+        android:label="@string/app_name"
+        android:persistent="true" >
+		......
+	</application>
+其中，我把继承了Application的类是【包名】.environment.BaseApplication。  
+**大家可以根据自身的项目需要进行安排，不要忘了在这里注册就好。**  
+之后就是对应用中未捕获的异常做处理了。  
+在BaseApplication中，创建一个名为CrashHandler的子类，该类实现UncaughtExceptionHandler接口，复写uncaughtException方法。在该方法中，进行相应的崩溃处理。这里我们需要重启程序，因此，该子类可以写成如下代码段所示的内容：  
+
+    // 异常处理
+	class CrashHandler implements UncaughtExceptionHandler {
+
+		@Override
+		public void uncaughtException(Thread thread, final Throwable ex) {
+			ex.printStackTrace();
+			Intent restartIntent = new Intent(BaseApplication.this, SplashScreen.class);
+			restartIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(restartIntent);
+			android.os.Process.killProcess(android.os.Process.myPid());
+		}
+	}
+
+这里需要注意的是，**Intent对象的Flag必须包含FLAG\_ACTIVITY\_NEW\_TASK。**  
+最后，在复写的onCreate方法中，指定异常处理的方法：  
+    Thread.setDefaultUncaughtExceptionHandler(crashHandler);  
+其中，crashHandler为CrashHandler的对象。
+到此，我们的程序在发生崩溃的时候就不会出现“很抱歉。。。”的对话框了，取而代之的是自动重启。  
+当然，这只是一个治标不治本的方法，真正的解决之道依然要找到崩溃的位置，然后除掉这个Bug。  
+最后，关于Application，我这里就不多说了，如果诸位不是很了解的话，可以看下这位兄弟的文章，会大有启发：  
+[http://blog.csdn.net/pi9nc/article/details/11200969 ](http://blog.csdn.net/pi9nc/article/details/11200969) 
