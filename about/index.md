@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 关于我
+date: 2014-08-01 00:00:00
 permalink: /about/
 ---
 
