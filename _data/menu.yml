@@ -1,0 +1,10 @@
+
+mainmenu:
+  home:
+    url: "/"
+    text: "主页"
+    icon_class: "fa-home"
+  aboutme:
+    url: "/about/"
+    text: "关于我"
+    icon_class: "fa-info-circle"
